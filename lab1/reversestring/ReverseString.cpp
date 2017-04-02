@@ -8,7 +8,7 @@ using ::std::string;
 
 
 
-string reverse(string str){
+string Reverse(string str){
     string reversed_characters="";
     //const char *characters = str.c_str(); //uzyskanie z obiektu string wskaźnika na poszczególne znaki
     size_t size = str.size(); //uzyskanie z obiektu string ilości znaków

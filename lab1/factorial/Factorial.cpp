@@ -13,13 +13,13 @@ int factorial(int value) {
   if(value < 0)
     return value * factorial(value + 1);
   if(value > 1)
-    return value * factorial(value - 1);
+    return value * Factorial(value - 1);
 }
 */
 
 
 //iteracyjnie
-int factorial(int value){
+int Factorial(int value){
   int result=1;
   if(value < -12 || value > 12)
     return 0;
