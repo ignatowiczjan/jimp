@@ -4,7 +4,7 @@ project(tinyurl)
 set(HEDEAR_FILES TinyUrl.h)
 set(SOURCE_FILES TinyUrl.cpp)
 
-add_library(libtinyurl STATIC ${SOURCE_FILES} main.cpp)
+add_library(libtinyurl STATIC ${SOURCE_FILES} main.cpp ../minimaltimedifference/MinimalTimeDifference.cpp ../minimaltimedifference/MinimalTimeDifference.h)
 target_include_directories(libtinyurl PUBLIC .)
 
 add_executable(tinyurl ${SOURCE_FILES} main.cpp)
