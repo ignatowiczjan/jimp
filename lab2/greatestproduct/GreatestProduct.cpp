@@ -7,33 +7,42 @@
 
 using ::std::vector;
 
-int GreatestProduct(const std::vector<int> &numbers, int k){
+int GreatestProduct(const std::vector<int> &numbers, int k) {
     vector<int> greatest;
     int product = 1;
 
     int minus = 0;
-    int tmp;
+    bool isallminus = true;
 
-    for(int v : numbers) {
-        minus = minus + TryToInsert(greatest,v,k);
 
-    }
-    
-    if(minus%2 != 0) {
-        greatest.clear();
-        for (int v : numbers) {
-            if (v < 0)
-                continue;
-            minus += TryToInsert(greatest, v, k);
+    for (int v : numbers) {
+        if (v >= 0) {
+            isallminus = false;
+            break;
         }
     }
 
-    for(int v : greatest){
+
+    if (isallminus)
+        for (int v : numbers) {
+            SpecialOneIfFunction(greatest, v, k);
+        }
+
+    else {
+        for (int v : numbers) {
+            minus = minus + TryToInsert(greatest, v, k);
+        }
+    }
+
+    for (int v : greatest) {
         product *= v;
     }
 
     return product;
 }
+
+
+
 
 int TryToInsert(vector<int> &greatest, int value, int k) {
     bool inserted = false;
@@ -66,4 +75,26 @@ int TryToInsert(vector<int> &greatest, int value, int k) {
         }
     }
     return minus;
+}
+
+
+void SpecialOneIfFunction(vector<int> &minus, int value, int k) {
+    bool inserted = false;
+    if (minus.size() == 0) {
+        minus.push_back(value);
+    } else {
+        for (int i = 0; i < minus.size(); i++) {
+            if (value >= minus[i]) {
+                minus.insert(minus.begin() + i, value);
+                inserted = true;
+                if (minus.size() > k) {
+                    minus.pop_back();
+                }
+                break;
+            }
+        }
+        if (!inserted && minus.size() < k) {
+            minus.push_back(value);
+        }
+    }
 }
