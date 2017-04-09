@@ -10,7 +10,7 @@ set(REVERSE_STRING_SRC ReverseStringTest.cpp)
 set(PALINDROME_SRC PalindromeTest.cpp)
 set(MULTIPLICATION_TABLE_SRC MultiplicationTableTest.cpp)
 set(DOUBLE_BASE_PALINDROME_SRC DoubleBasePalindromeTest.cpp)
-set(SOURCE_FILES ${FACTORIAL_SRC} ${REVERSE_STRING_SRC} ${PALINDROME_SRC} ${MULTIPLICATION_TABLE_SRC} ${DOUBLE_BASE_PALINDROME_SRC} ../../lab2/array2d/Array2D.cpp ../../lab2/array2d/Array2D.h ../../lab4/geometry/Point.cpp ../../lab4/geometry/Point.h ../../lab4/geometry/Square.cpp ../../lab4/geometry/Square.h ../../lab4/geometry/main.cpp)
+set(SOURCE_FILES ${FACTORIAL_SRC} ${REVERSE_STRING_SRC} ${PALINDROME_SRC} ${MULTIPLICATION_TABLE_SRC} ${DOUBLE_BASE_PALINDROME_SRC} ../../lab2/array2d/Array2D.cpp ../../lab2/array2d/Array2D.h ../../lab4/geometry/Point.cpp ../../lab4/geometry/Point.h ../../lab4/geometry/Square.cpp ../../lab4/geometry/Square.h ../../lab4/geometry/main.cpp ../../lab5/classs/XXX.cpp ../../lab5/classs/XXX.h ../../lab5/classs/main.cpp ../../lab5/matrix/Matrix.cpp ../../lab5/matrix/Matrix.h)
 
 set(GTEST_LIBS gtest gtest_main gmock gmock_main)
 
