@@ -10,17 +10,21 @@
 #include <map>
 
 namespace ccounter {
+    using ::std::string;
+    using ::std::map;
+    using ::std::unique_ptr;
+
     struct Counter{
-        int count;
+        map<string, int> count;
     };
 
-    std::unique_ptr<Counter> Init();
+    unique_ptr<Counter> Init();
 
-    void Inc(std::string key, std::unique_ptr<Counter> *counter);
+    void Inc(string key, unique_ptr<Counter> *counter);
 
-    int Counts(const std::unique_ptr<Counter> &counter, std::string key);
+    int Counts(const unique_ptr<Counter> &counter, string key);
 
-    void SetCountsTo(std::string key, int value, std::unique_ptr<Counter> *counter);
+    void SetCountsTo(string key, int value, unique_ptr<Counter> *counter);
 }
 
 
